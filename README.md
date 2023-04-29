@@ -3,7 +3,7 @@
 ## Installing Canister SDK
 
 ### Windows Installation
-1. Search for terminal and run it as administrator.  
+1. Search for `terminal` and run it as administrator.  
 	![image](https://user-images.githubusercontent.com/55611653/235280652-67872dcd-d500-4b02-9997-9c7e667b9daf.png)
 2. Enable feature `Windows Subsystem for Linux` (WSL).
 	```
@@ -52,3 +52,52 @@
 	dfx --version
 	```
 	![image](https://user-images.githubusercontent.com/55611653/235283664-af418229-a511-465d-9889-a658db2a2796.png)
+
+## Create your identity and wallet
+1. It is not recommended to use the default identity as this will hold your funds in ICP token. To create your new identity:
+	```
+	dfx identity new yourname
+	```
+	Input a password to secure and encrypt your identity
+2. Add funds to your identity. Creating wallet canister requires atleast 0.03 ICP. You can get ICP from exchange or send me a direct message at discord `chan#8942` with your account-id.
+	```
+	dfx ledger account-id
+	```
+3. Create your wallet canister. This will hold Cycles.
+	```
+	dfx ledger create-canister $(dfx identity get-principal) --amount 0.029 --network ic
+	```
+	If you have enough funds and no error occured this will return a canister id.  
+	Copy the canister id as it will be needed in the next command.  
+4. Deploy your wallet canister. Make sure to paste the correct canister id and remove the square brackets.
+	```
+	dfx identity deploy-wallet [your-canisterid] --network ic
+	```
+5. Add cycles to your wallet.  
+	- You can get 20 Trillion Cycles by accomplishing the tasks in [DFINITY Faucet](https://anv4y-qiaaa-aaaal-qaqxq-cai.ic0.app/).  
+	- Or send me a dm at discord `chan#8942`.  
+
+## Deploy your first DApp on IC
+1. Start IC network on your machine
+	```
+	dfx start --clean --background
+	```
+2. Create a new project.
+	```
+	dfx new mydapp
+	```
+	Replace `mydapp` to your project name.  
+	This will create a new directory and files for a sample project.  
+3. Go inside the directory. Make sure to replace the `mydapp` to your project name.
+	```
+	cd mydapp
+	```
+4. Compile and deploy to local network
+	```
+	dfx deploy
+	```
+	It will return a link where you can access and test your canister.  
+5. Deploy to main network
+	```
+	dfx deploy --network ic --with-cycles 300000000000
+	```
