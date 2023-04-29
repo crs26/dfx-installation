@@ -3,27 +3,27 @@
 ## Installing Canister SDK
 
 ### Windows Installation
-1. Search for terminal and run as administrator.  
-		![image](https://user-images.githubusercontent.com/55611653/235280652-67872dcd-d500-4b02-9997-9c7e667b9daf.png)
-2. Enable feature Windows Subsystem Linux(WSL).
+1. Search for terminal and run it as administrator.  
+	![image](https://user-images.githubusercontent.com/55611653/235280652-67872dcd-d500-4b02-9997-9c7e667b9daf.png)
+2. Enable feature `Windows Subsystem for Linux` (WSL).
 	```
-    dism.exe /online /enable-feature /featurename:Microsoft-Hyper-V /norestart
+	dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
 	```
 3. Set WSL version 2 as default.
 	```
 	wsl --set-default-version 2
 	```
-4. Install linux
+4. Install ubuntu linux
 	```
 	wsl --install
 	```
 5. Run ubuntu terminal  
-		![image](https://user-images.githubusercontent.com/55611653/235281427-f90d296a-3ed6-4229-8757-4fea81e5853e.png)
+	![image](https://user-images.githubusercontent.com/55611653/235281427-f90d296a-3ed6-4229-8757-4fea81e5853e.png)
 		
 	If you encountered an error `WslRegisterDistribution failed with error: Ox80370114`  
 	</br>
 		![Screenshot 2023-04-28 164514](https://user-images.githubusercontent.com/55611653/235281554-981dca48-1109-45c6-bd11-cc9f1f8c42b2.png)  
-	Enable the Hyper-V feature
+	Enable the `Hyper-V` feature. If no error occured do not execute this command.
 	```
 	dism.exe /online /enable-feature /featurename:Microsoft-Hyper-V /norestart
 	```  
