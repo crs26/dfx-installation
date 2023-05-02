@@ -86,8 +86,8 @@
 	```
 	dfx new mydapp
 	```
-	Replace `mydapp` to your project name.  
-	This will create a new directory and files for a sample project.  
+	> Replace `mydapp` to your project name.  
+	> This will create a new directory and files for a sample project.  
 3. Go inside the directory. Make sure to replace the `mydapp` to your project name.
 	```
 	cd mydapp
@@ -96,7 +96,7 @@
 	```
 	dfx deploy
 	```
-	It will return a link where you can access and test your canister.  
+	> It will return a link where you can access and test your canister.  
 5. Deploy to main network
 	```
 	dfx deploy --network ic --with-cycles 300000000000
